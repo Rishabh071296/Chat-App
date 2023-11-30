@@ -1,18 +1,19 @@
-import Header from "./components/header";
-import LiveVisitors from "./components/Live Visitors";
-import RoomChat from "./components/RoomChat";
-import PublicChat from "./components/PublicChat";
-import { Container,Row } from "reactstrap";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Layout from "./Containers/layout";
 
-function App() {
-  return (
-    <div>
-     <header/>
-     <LiveVisitors/>
-     <RoomChat/>
-     <PublicChat/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <BrowserRouter>
+          <switch>
+            <Route path="/" component={Layout} />
+          </switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
