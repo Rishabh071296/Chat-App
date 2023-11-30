@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import axios from "axios";
+
 import openSocket from "socket.io-client";
 
-const socket = openSocket("http://localhost:3000");
+const socket = openSocket("http://localhost:6600");
 
 class LiveVisitors extends Component {
   state = {
@@ -61,7 +62,7 @@ class LiveVisitors extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h2>Live Visitors</h2>
         <Table>
           <thead>
@@ -76,7 +77,7 @@ class LiveVisitors extends Component {
           </thead>
           <tbody>{this.renderTableBody()}</tbody>
         </Table>
-      </div>
+      </React.Fragment>
     );
   }
 }
